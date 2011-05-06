@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 60px 0 0;
+    background: #092e20 url("../img/hdr_logo.gif") 10px 10px no-repeat;
+    color: #fff;
+    font-family: "Trebuchet MS",sans-serif;
+    font-size: 1em;
+}
+
+a, a:visited {
+    color: #ffc757;
+    text-decoration: none;
+}
+
+h1 {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 10px;
+    background: #92cc47 url("../img/bbdsm_bg.gif") 0 0 repeat-x;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    padding: 10px;
+    background: #234f32;
+    margin: 10px 0;
+}

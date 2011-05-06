@@ -1,0 +1,29 @@
+{% load i18n %}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>{% block title %}Django project{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- CSS -->
+	<link href="/static/web/css/greetings.css" rel="stylesheet" type="text/css" />
+
+	{% block css %}
+	{% endblock %}
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/static/ext/jquery/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="/static/web/js/greetings.js"></script>
+
+	{% block js %}
+	{% endblock %}
+</head>
+
+<body>
+	{% block content %}
+		<h1>Greetings! You have successfully initiated your django-project!</h1>
+		<p>Go to the <a href="/admin/">Admin</a> side</p>
+	{% endblock %}
+</body>
+</html>
