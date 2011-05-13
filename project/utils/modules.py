@@ -21,7 +21,7 @@ def set_module_attr(module, name, value):
     setattr(module, name, value)
 
 
-def get_module_constants_dict(module):
+def get_module_consts(module):
     '''
     Return dict of UPPERCASE module attributes (that alse not starts with '_')
     '''
