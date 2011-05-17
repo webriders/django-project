@@ -1,4 +1,4 @@
-def ol(src, *args):
+def ordered_list(src, *args):
     if args:
         src = list([src]) + list(args)
     if isinstance(src, OrderedList):
@@ -6,28 +6,29 @@ def ol(src, *args):
     return OrderedList(src)
 
 
-def li(src, before=None, after=None):
+def ordered_item(src, before=None, after=None):
     if isinstance(src, OrderedListItem):
         src.update(None, before, after)
         return src
     return OrderedListItem(src, before, after)
 
 
-def merge(l1, l2):
-    l1 = map(li, l1)
-    l2 = map(li, l2)
-    result = l1 + l2
-    for i1 in result:
-        s1 = i1.get_content()
-        for i2 in result:
-            s2 = i2.get_content()
-            if s1 in i2.after:
-                i1.before |= set([s2])
-            if s1 in i2.before:
-                i1.after |= set([s2])
-        conflict = i1.before & i1.after
-        if conflict:
-            pass # we may indicate conflict somehow or throw an error
+def merge_lists(list1, list2):
+    list1 = map(ordered_item, list1)
+    list2 = map(ordered_item, list2)
+    result = list1 + list2
+    for item1 in result:
+        id1 = item1.get_content()
+        for item2 in result:
+            id2 = item2.get_content()
+            if id1 in item2.after:
+                item1.before |= set([id2])
+            if id1 in item2.before:
+                item1.after |= set([id2])
+        # We may indicate conflict somehow or throw an error
+        # conflict = item1.before & item1.after
+        # if conflict:
+        #     raise Exception("Can't resolve list items order.")
     result.sort()
     return result
 
