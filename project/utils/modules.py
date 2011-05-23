@@ -1,4 +1,4 @@
-from django.utils.importlib import import_module
+from django.utils import importlib
 
 
 def get_module(module):
@@ -7,23 +7,13 @@ def get_module(module):
     Import module if string was passed.
     '''
     if isinstance(module, str):
-        module = import_module(module)
+        module = importlib.import_module(module)
     return module
-
-
-def get_module_attr(module, name):
-    module = get_module(module)
-    return getattr(module, name)
-
-
-def set_module_attr(module, name, value):
-    module = get_module(module)
-    setattr(module, name, value)
 
 
 def get_module_consts(module):
     '''
-    Return dict of UPPERCASE module attributes (that alse not starts with '_')
+    Return dict of UPPERCASE module attributes (that doesn't starts with "_")
     '''
     module = get_module(module)
     module_dict = {}

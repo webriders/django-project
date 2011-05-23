@@ -1,5 +1,11 @@
 import os
-from project.utils.settings import get_setting
+from project.utils.settings import get_setting, install_main_settings, install_apps_settings, cleanup_settings
+
+install_main_settings()
+#install_app_settings('conf.apps.contrib') # package that contains settings.py inside
+#install_app_settings('conf.apps.django_project') # regular python module
+install_apps_settings()
+cleanup_settings()
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

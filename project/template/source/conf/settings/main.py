@@ -85,10 +85,7 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-)
+MIDDLEWARE_CLASSES = ()
 
 ROOT_URLCONF = 'urls'
 
