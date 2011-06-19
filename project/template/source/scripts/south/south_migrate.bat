@@ -1,6 +1,6 @@
-cd ../apps/web
+cd ../../
 echo off
 echo --------------------------------------------------
-echo Compile i18n messages
+echo Migrate database (run all migrations)
 echo --------------------------------------------------
-python ../../manage.py compilemessages
+python manage.py migrate

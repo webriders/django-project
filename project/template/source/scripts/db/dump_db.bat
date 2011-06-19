@@ -1,5 +1,4 @@
-cd ..
-echo off
+cd ../../
 echo --------------------------------------------------
 echo Dump whole project data in json format
 echo --------------------------------------------------

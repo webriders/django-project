@@ -1,7 +1,7 @@
 # -*- encoding:utf-8 -*-
-'''
+"""
 Common web-app views
-'''
+"""
 from django.views.generic.base import TemplateView
 
 class Greetings(TemplateView):

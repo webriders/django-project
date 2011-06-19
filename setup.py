@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-project',
-    version="0.5",
+    version="0.7",
     author='Rostyslav Bryzgunov',
     author_email='kottenator@gmail.com',
     description='Modular & scalable Django project template',

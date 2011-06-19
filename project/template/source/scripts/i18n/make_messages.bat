@@ -1,7 +1,7 @@
-cd ..
+cd ../../apps/web/
 echo off
 echo --------------------------------------------------
-echo Sync DB
+echo Make i18n messages
 echo --------------------------------------------------
-python manage.py syncdb --migrate
+python ../../manage.py makemessages -l en
 

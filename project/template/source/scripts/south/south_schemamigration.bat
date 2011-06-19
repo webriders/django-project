@@ -1,6 +1,6 @@
-cd ..
+cd ../../
 echo off
 echo --------------------------------------------------
-echo Python Shell
+echo Create schema migration
 echo --------------------------------------------------
-python manage.py shell
+python manage.py schemamigration web --auto

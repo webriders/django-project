@@ -1,6 +1,5 @@
-cd ..
-echo off
+cd ../../
 echo --------------------------------------------------
-echo Start development server
+echo Sync DB
 echo --------------------------------------------------
-python manage.py runserver 80
+python manage.py syncdb

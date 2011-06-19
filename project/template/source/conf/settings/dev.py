@@ -1,20 +1,21 @@
 import os
-from project.utils.settings import get_setting, install_main_settings, install_apps_settings, cleanup_settings
+from project.utils.settings import get_setting, import_settings
+from project.utils.install import install_settings, install_app
 
-install_main_settings()
-#install_app_settings('conf.apps.contrib') # package that contains settings.py inside
-#install_app_settings('conf.apps.django_project') # regular python module
-install_apps_settings()
-cleanup_settings()
+install_settings('conf.settings.main')
+install_app('django.contrib.admin', 'conf.apps.admin')
+install_app('web', 'conf.apps.web')
+import_settings(globals())
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = TEMPLATE_DEBUG = True
 
-#EMAIL_HOST = "pleso.net"
-#EMAIL_PORT = "25"
-#EMAIL_HOST_USER = "bot@inmind.org"
-#EMAIL_HOST_PASSWORD = ""
-#EMAIL_SUBJECT_PREFIX = "website (local) - "
+#EMAIL_HOST = ''
+#EMAIL_PORT = ''
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_SUBJECT_PREFIX = '[website] '
 
 DATABASES = {
     'default': {

@@ -1,6 +1,6 @@
 cd ..
-echo off
 echo --------------------------------------------------
-echo Migrate database (run all migrations)
+echo Start development server
 echo --------------------------------------------------
-python manage.py migrate 
+rem . /srv/python-environments/django-site/bin/activate
+python manage.py runserver 80

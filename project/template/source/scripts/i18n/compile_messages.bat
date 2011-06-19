@@ -1,7 +1,6 @@
-cd ../apps/web
+cd ../../apps/web/
 echo off
 echo --------------------------------------------------
-echo Make i18n messages
+echo Compile i18n messages
 echo --------------------------------------------------
-python ../../manage.py makemessages -l en
-
+python ../../manage.py compilemessages
