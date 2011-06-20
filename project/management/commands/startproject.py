@@ -69,8 +69,10 @@ class Command(LabelCommand):
     def copy_project_template(self, project_dir):
         self.stdout.write('  - Copying django-project template into "%s" ...\n' % project_dir)
         template_dir = os.path.join(project.__path__[0], 'template')
-        for path in os.listdir(template_dir):
-            shutil.copytree(os.path.join(template_dir, path), os.path.join(project_dir, path))
+        for d, subdirs, files in os.walk(template_dir):
+            for path in subdirs:
+                shutil.copytree(os.path.join(template_dir, path), os.path.join(project_dir, path))
+            break
 
     IGNORED_DIRS = ['.svn']
     IGNORED_FILES = ['dummy', 'README.txt']
